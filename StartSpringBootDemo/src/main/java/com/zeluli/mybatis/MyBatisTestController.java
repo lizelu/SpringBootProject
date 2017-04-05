@@ -15,15 +15,14 @@ public class MyBatisTestController {
 	//http://127.0.0.1:8080/queryContentById?contentId=6
 	@RequestMapping(value="/queryContentById")
 	public Content queryContentById(String contentId) {
-
 		Content content = contentMapper.queryById(contentId);
 		return content;
 	}
 	
+	//http://127.0.0.1:8080/queryAll
 	@RequestMapping(value="/queryAll")
 	public List<Content> queryAll() {
-
-		List<Content> content = contentMapper.query();
-		return content;
+		List<Content> contents = contentMapper.query();
+		return contents;
 	}
 }

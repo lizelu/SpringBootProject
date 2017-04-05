@@ -13,7 +13,6 @@ public class Content {
 	public void setContentId(Integer contentId) {
 		this.contentId = contentId;
 	}
-	
 	public String getTitle() {
 		return title;
 	}
