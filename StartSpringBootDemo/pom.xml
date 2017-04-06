@@ -57,6 +57,14 @@
 		    <version>1.5.2.RELEASE</version>
 		</dependency>
 		
+		<!-- 添加json数据绑定支持 -->
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.8.6</version>
+		</dependency>
+		
 		
 		
 	</dependencies>
