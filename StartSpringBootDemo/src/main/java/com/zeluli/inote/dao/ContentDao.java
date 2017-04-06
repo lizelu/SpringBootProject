@@ -16,38 +16,40 @@ public class ContentDao extends SuperDao {
 	@Autowired
 	private INoteContentMapper contentMapper;
 	
+	public ContentDao() {
+		this.responseBody.put("result", "SUCCESS");
+		this.responseBody.put("errorMessage", "");
+	}
+	
 	public Map<String, Object> queryContent (String contentId) {
 		this.responseBody.remove("list");
 		ArrayList<Content> contents = contentMapper.queryByContentId(contentId);
 		if(!contents.isEmpty()){
 			this.responseBody.put("list", contents.get(0));
 		}
-		
-		this.responseBody.put("result", "SUCCESS");
-		this.responseBody.put("errorMessage", "");
 		return this.responseBody;
 	}
 	
 	public Map<String, Object> queryContentList (String userId) {
 		this.responseBody.put("list", contentMapper.queryByUserId(userId));
-		this.responseBody.put("result", "SUCCESS");
-		this.responseBody.put("errorMessage", "");
 		return this.responseBody;
 	}
 	
 	public Map<String, Object> addContent (String userId, String title, String content) {
 		contentMapper.insert(userId, title, content);
 		this.responseBody.remove("list");
-		this.responseBody.put("result", "SUCCESS");
-		this.responseBody.put("errorMessage", "");
 		return this.responseBody;
 	}
 	
 	public Map<String, Object> updateContent (String contentId, String title, String content) {
 		contentMapper.updateContent(contentId, title, content);;
 		this.responseBody.remove("list");
-		this.responseBody.put("result", "SUCCESS");
-		this.responseBody.put("errorMessage", "");
+		return this.responseBody;
+	}
+	
+	public Map<String, Object> deleteContent (String contentId) {
+		contentMapper.deleteContent(contentId);
+		this.responseBody.remove("list");
 		return this.responseBody;
 	}
 }

@@ -2,6 +2,7 @@ package com.zeluli.inote.mapper;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -33,4 +34,7 @@ public interface INoteContentMapper {
 	//根据ContentId来更新内容信息
 	@Update("update content set title=#{title}, content=#{content}, create_time=now() where id=#{contentId}")
 	void updateContent(@Param("contentId") String contentId, @Param("title") String title, @Param("content") String content);
+	
+	@Delete("delete from content where id=#{contentId}")
+	void deleteContent(@Param("contentId") String contentId);
 }

@@ -33,4 +33,9 @@ public class ContentRestController {
 	public Map<String, Object> updateContent(String contentId, String title, String content) {
 		return contentDao.updateContent(contentId, title, content);
 	}
+	
+	@RequestMapping(value="/contentDelete")
+	public Map<String, Object> deleteContent(String contentId) {
+		return contentDao.deleteContent(contentId);
+	}
 }
