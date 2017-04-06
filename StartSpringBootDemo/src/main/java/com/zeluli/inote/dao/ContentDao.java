@@ -17,8 +17,7 @@ public class ContentDao extends SuperDao {
 	private INoteContentMapper contentMapper;
 	
 	public ContentDao() {
-		this.responseBody.put("result", "SUCCESS");
-		this.responseBody.put("errorMessage", "");
+		super();
 	}
 	
 	public Map<String, Object> queryContent (String contentId) {

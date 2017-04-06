@@ -18,14 +18,16 @@ public class UserDao extends SuperDao {
 	@Autowired
 	private UserMapper userMapper;
 	
+	public UserDao() {
+		super();
+	}
+	
 	public Map<String, Object> queryUserInfo(String userName) {
 		this.responseBody.remove("list");
 		ArrayList<User> users = userMapper.queryUserInfo(userName);
 		if(!users.isEmpty()) {
 			this.responseBody.put("list", users.get(0));
 		}
-		this.responseBody.put("result", "SUCCESS");
-		this.responseBody.put("errorMessage", "");
 		return this.responseBody;
 	}
 	
@@ -34,8 +36,7 @@ public class UserDao extends SuperDao {
 		if(!users.isEmpty()) {
 			this.responseBody.put("list", users.get(0));
 		}
-		this.responseBody.put("result", "SUCCESS");
-		this.responseBody.put("errorMessage", "");
+
 		return this.responseBody;
 	}
 	
