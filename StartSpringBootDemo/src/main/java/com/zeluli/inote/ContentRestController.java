@@ -28,4 +28,9 @@ public class ContentRestController {
 	public Map<String, Object> addContent(String userId, String title, String content) {
 		return contentDao.addContent(userId, title, content);
 	}
+	
+	@RequestMapping(value="/contentUpdate")
+	public Map<String, Object> updateContent(String contentId, String title, String content) {
+		return contentDao.updateContent(contentId, title, content);
+	}
 }

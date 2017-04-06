@@ -42,4 +42,12 @@ public class ContentDao extends SuperDao {
 		this.responseBody.put("errorMessage", "");
 		return this.responseBody;
 	}
+	
+	public Map<String, Object> updateContent (String contentId, String title, String content) {
+		contentMapper.updateContent(contentId, title, content);;
+		this.responseBody.remove("list");
+		this.responseBody.put("result", "SUCCESS");
+		this.responseBody.put("errorMessage", "");
+		return this.responseBody;
+	}
 }
