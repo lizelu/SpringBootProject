@@ -35,6 +35,7 @@ public interface INoteContentMapper {
 	@Update("update content set title=#{title}, content=#{content}, create_time=now() where id=#{contentId}")
 	void updateContent(@Param("contentId") String contentId, @Param("title") String title, @Param("content") String content);
 	
+	//根据contentId来删除内容
 	@Delete("delete from content where id=#{contentId}")
 	void deleteContent(@Param("contentId") String contentId);
 }

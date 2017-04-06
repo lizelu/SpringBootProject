@@ -13,6 +13,7 @@ import com.zeluli.inote.model.Content;
 @Service
 @MapperScan("com.zeluli.inote.mapper")
 public class ContentDao extends SuperDao {
+	
 	@Autowired
 	private INoteContentMapper contentMapper;
 	

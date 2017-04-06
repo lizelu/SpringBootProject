@@ -14,6 +14,7 @@ import com.zeluli.inote.model.User;
 
 @Mapper
 public interface UserMapper {
+	
 	//根据用户名查询用户是否存在
 	@Select("select * from user where username = #{username}")
 	@Results(value={
@@ -35,6 +36,4 @@ public interface UserMapper {
 	//插入用户，用户注册
 	@Insert("insert into user (username, password) values (#{username}, #{password})")
 	void insert(@Param("username") String userName, @Param("password") String password);
-	
-	
 }
