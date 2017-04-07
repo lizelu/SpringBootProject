@@ -11,8 +11,10 @@ import com.zeluli.inote.dao.ContentDao;
 
 @RestController
 public class ContentRestController {
+	
 	@Autowired
 	private ContentDao contentDao;
+	
 	//获取内容列表
 	@RequestMapping(value="/contentList")
 	public Map<String, Object> queryContentList(String userId) {
